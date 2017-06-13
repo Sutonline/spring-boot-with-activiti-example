@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef" xmlns:modeler="http://activiti.com/modeler"
+             modeler:version="1.0en"
+             modeler:exportDateTime="20150216104339475" modeler:modelId="933057" modeler:modelVersion="3" modeler:modelLastUpdated="1424083415708">
+<process id="sayHi" name="sayHello" isExecutable="true">
+    <startEvent id="start" name="Start" ></startEvent>
+
+    <scriptTask id="output" scriptFormat="Groovy">
+        <script>
+        <![CDATA[println "luckckckck" ]]>
+        </script>
+    </scriptTask>
+
+    <endEvent id="end" />
+
+    <sequenceFlow id = "flow1" sourceRef="start" targetRef="output">
+
+    </sequenceFlow>
+
+    <sequenceFlow id = "flow2" sourceRef="output" targetRef="end" />
+
+</process>
+</definitions>

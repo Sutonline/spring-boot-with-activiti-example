@@ -41,14 +41,14 @@ public class HireProcessTest {
 
     private Wiser wiser;
 
-    @Before
+    /*@Before*/
     public void setup() {
         wiser = new Wiser();
         wiser.setPort(1025);
         wiser.start();
     }
 
-    @After
+    /*@After*/
     public void cleanup() {
         wiser.stop();
     }
@@ -100,6 +100,15 @@ public class HireProcessTest {
         // Verify process completed
         Assert.assertEquals(1, historyService.createHistoricProcessInstanceQuery().finished().count());
 
+    }
+
+    @Test
+    public void testSayHi() {
+        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("sayHi");
+        /*Task task = taskService.createTaskQuery().processInstanceId(processInstance.getProcessInstanceId())
+                .singleResult();
+
+        taskService.complete(task.getId());*/
     }
 
 }
